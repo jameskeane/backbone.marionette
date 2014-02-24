@@ -16,6 +16,7 @@ will provide features such as `onShow` callbacks, etc. Please see
 ## Documentation Index
 
 * [CollectionView's `itemView`](#collectionviews-itemview)
+* [CollectionView's `getItemView`](#collectionviews-getitemview)
 * [CollectionView's `itemViewOptions`](#collectionviews-itemviewoptions)
 * [CollectionView's `emptyView`](#collectionviews-emptyview)
 * [CollectionView's `buildItemView`](#collectionviews-builditemview)
@@ -76,8 +77,9 @@ new MyCollectionView({
 If you do not specify an `itemView`, an exception will be thrown
 stating that you must specify an `itemView`.
 
-If you need a view specific to your model, you can override
-`getItemView`:
+## CollectionView's `getItemView`
+The value returned by this method is the `ItemView` class that will be instantiated when a `Model` needs to be initially rendered.
+This method also gives you the ability to customize per `Model` `ItemViews`.
 
 ```js
 Backbone.Marionette.CollectionView.extend({
